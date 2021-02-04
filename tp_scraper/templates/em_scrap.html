@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{% block page_content %}
+
+<h4>Wellcome to the simple email scraper</h4>
+<p>Please upload excel file here contains the main parsing links.<br> The column name must be"Title_URL"</p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <button class="btn btn-primary" type="submit">Upload</button>
+  </form>
+
+  {% if uploaded_file_url %}
+  <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+
+  <form action='new_run' method='GET'>
+    <button type='submit'> Run Now</button>
+  </form>
+  {% endif %}
+
+<p>If you have already uplaoded a links file and want <br>
+to run the existing process
+  <form action='old_run' method='GET'>
+    <button class="tn btn-primary" type='submit'> Run existing Process</button>
+  </form>
+</p>
+<p> if you want to get zip files of what is already scrapped please click below to get the zip files<br>
+if opened file render any error ignore it and  extract the saved zip file with 'rar'or 'winzip'
+  <form action='zip_files' method='GET'>
+    <button class="btn btn-success" type='submit'> Download Results</button>
+  </form>
+</p>
+
+
+  <p><a href="{% url 'main' %}" class="btn-outline-primary">Return to home</a></p>
+{%endblock%}
