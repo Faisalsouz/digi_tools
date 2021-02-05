@@ -86,6 +86,9 @@ def scraper_py():
                             #wr.writerow(names)
                             wr.writerow(em)
                             print(f'{em} has been wirtten to file')
+                for f in os.listdir('./media'):
+                    os.remove(os.path.join('./media', f))
+
                 files = os.listdir('./output')
                 path = [f for f in files if f.endswith('csv')]
                 with ZipFile('./output/out.zip', 'w', ) as z:
