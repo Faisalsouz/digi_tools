@@ -86,20 +86,20 @@ def scraper_py():
                             #wr.writerow(names)
                             wr.writerow(em)
                             print(f'{em} has been wirtten to file')
-                for f in os.listdir('./media'):
-                    os.remove(os.path.join('./media', f))
+            for f in os.listdir('./media'):
+                os.remove(os.path.join('./media', f))
 
-                files = os.listdir('./output')
-                path = [f for f in files if f.endswith('csv')]
-                with ZipFile('./output/out.zip', 'w', ) as z:
-                    for i in path:
-                        print(i)
-                        z.write(f'./output/{i}')
-                        print('files has been zipped')
-                    out_file = open('./output/out.zip', 'rb')
-                    response = HttpResponse(out_file,content_type='application/force-download')  # application/zip application/force-download
-                    response['Content-Disposition'] = 'attachment; filename=out.zip'
-                    return response
+            files = os.listdir('./output')
+            path = [f for f in files if f.endswith('csv')]
+            with ZipFile('./output/out.zip', 'w', ) as z:
+                for i in path:
+                    print(i)
+                    z.write(f'./output/{i}')
+                    print('files has been zipped')
+                out_file = open('./output/out.zip', 'rb')
+                response = HttpResponse(out_file,content_type='application/force-download')  # application/zip application/force-download
+                response['Content-Disposition'] = 'attachment; filename=out.zip'
+                return response
 
 def test_zip():
     files = os.listdir('./output')
