@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tp_scraper'
+    'tp_scraper',
+      'storages'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ALLOWED_HOSTS = ['my-scraper-dev.us-west-2.elasticbeanstalk.com']
+### Django storages - use this for production
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+	### Django storages - use in production
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
