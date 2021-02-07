@@ -126,3 +126,4 @@ ALLOWED_HOSTS = ['my-scraper-dev.us-west-2.elasticbeanstalk.com']
 if 'AWS_ACCESS_KEY_ID' in os.environ:
     AWS_ACCESS_KEY_ID = os.environ['AKIATVHUOACZ3C7TQ635']
     AWS_SECRET_ACCESS_KEY = os.environ['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']
+#this just test
