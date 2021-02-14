@@ -7,7 +7,7 @@ certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
 dj-database-url==0.5.0
-Django==301
+Django==3.1
 djangorestframework==3.11.1
 et-xmlfile==1.0.1
 idna==2.10
