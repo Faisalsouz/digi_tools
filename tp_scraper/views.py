@@ -30,8 +30,10 @@ def scraper_main(reqeust):
         })
     return render(reqeust, 'em_scrap.html')
 def output(request):
-    res=scraper_py()
-   # return(res)
+    if request.method == 'GET':
+		
+        res=scraper_py()
+       # return(res)
 
 def download_zip(request):
     res = test_zip()
