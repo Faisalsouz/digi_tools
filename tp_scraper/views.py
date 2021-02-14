@@ -29,10 +29,10 @@ def scraper_main(reqeust):
             'uploaded_file_url': uploaded_file_url
         })
     return render(reqeust, 'em_scrap.html')
-def output(request):
-    if request.method == 'GET':
-		
-        res=scraper_py()
+async def output(request):
+    #if request.method == 'GET':
+   res= await scraper_py()
+    retrunr(res) 
        # return(res)
 
 def download_zip(request):
