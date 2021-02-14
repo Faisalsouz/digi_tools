@@ -32,7 +32,7 @@ def scraper_main(reqeust):
 async def output(request):
     #if request.method == 'GET':
    res= await scraper_py()
-    retrunr(res) 
+   retrunr(res) 
        # return(res)
 
 def download_zip(request):
