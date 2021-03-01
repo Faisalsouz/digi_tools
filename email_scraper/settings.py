@@ -125,7 +125,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')##
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'tp_scraper/static')##
 
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ALLOWED_HOSTS = ['my-scraper-dev.us-west-2.elasticbeanstalk.com','*']
