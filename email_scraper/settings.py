@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')##
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')##
 
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'tp_scraper/static')##
 
@@ -129,9 +129,9 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ALLOWED_HOSTS = ['my-scraper-dev.us-west-2.elasticbeanstalk.com','*']
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-#if 'AWS_ACCESS_KEY_ID' in os.environ:
- #   AWS_ACCESS_KEY_ID = os.environ['AKIATVHUOACZ3C7TQ635']
-  #  AWS_SECRET_ACCESS_KEY = os.environ['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']
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+if 'AWS_ACCESS_KEY_ID' in os.environ:
+   AWS_ACCESS_KEY_ID = os.environ['AKIATVHUOACZ3C7TQ635']
+   AWS_SECRET_ACCESS_KEY = os.environ['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']
 #this just test
