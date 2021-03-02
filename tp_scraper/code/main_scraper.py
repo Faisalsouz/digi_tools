@@ -11,13 +11,13 @@ from django.http import HttpResponse
 from zipfile import ZipFile
 
 
-def scraper_py():
+def scraper_py(file):
 
 #Importing all urls form the excel file contains Bundesland territories:
 
     #dirname = Path(os.path.dirname(__file__))
     #fx = os.path.join(dirname,'/media/file_1.xlsx')
-    excel=pd.read_excel(default_storage.open('file_1.xlsx'),engine='openpyxl')
+    excel=pd.read_excel(file,engine='openpyxl')
     url=excel.Title_URL.to_list()
     for i in url:
         city=i.split('-')[2].replace('.html','')
