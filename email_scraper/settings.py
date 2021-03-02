@@ -125,26 +125,26 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')##
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'tp_scraper/static')##
 
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-ALLOWED_HOSTS = ['my-scraper-dev.us-east-2.elasticbeanstalk.com','*']
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_STORAGE_BUCKET_NAME = "elasticbeanstalk-us-east-2-251768209587"
-AWS_S3_CUSTOM_DOMAIN = 'elasticbeanstalk-us-east-2-251768209587.s3.amazonaws.com'
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-
-AWS_LOCATION = 'static'
-
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-
-
-if 'AWS_ACCESS_KEY_ID' in os.environ:
-   AWS_ACCESS_KEY_ID = os.environ['AKIATVHUOACZ6QEWQ3XE']
-   AWS_SECRET_ACCESS_KEY = os.environ['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']
+# STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# ALLOWED_HOSTS = ['my-scraper-dev.us-east-2.elasticbeanstalk.com','*']
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_STORAGE_BUCKET_NAME = "elasticbeanstalk-us-east-2-251768209587"
+# AWS_S3_CUSTOM_DOMAIN = 'elasticbeanstalk-us-east-2-251768209587.s3.amazonaws.com'
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+#
+# AWS_LOCATION = 'static'
+#
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+#
+#
+# if 'AWS_ACCESS_KEY_ID' in os.environ:
+#    AWS_ACCESS_KEY_ID = os.environ['AKIATVHUOACZ6QEWQ3XE']
+#    AWS_SECRET_ACCESS_KEY = os.environ['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']
 #this just test
 #################
 AWS_LOCATION = 'static'
