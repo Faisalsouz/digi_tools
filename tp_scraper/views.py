@@ -22,20 +22,22 @@ def scraper_main(reqeust):
 
         myfile = reqeust.FILES['myfile']
 
-        fs = FileSystemStorage()
-        filename = fs.save('file_1.xlsx', myfile)
-        uploaded_file_url = fs.url(filename)
+        #fs = FileSystemStorage()
+        #filename = fs.save('file_1.xlsx', myfile)
+        #uploaded_file_url = fs.url(filename)
+        scraper_py(myfile)
         return render(reqeust, 'em_scrap.html', {
-            'uploaded_file_url': uploaded_file_url
-        })
-    return render(reqeust, 'em_scrap.html')
-async def output(request):
-        if request.method == 'POST' and request.FILES['myfile']:
-            file=request.FILES['myfile']
+        })#'uploaded_file_url': uploaded_file_url
+    #return render(reqeust, 'em_scrap.html')
 
-    #if request.method == 'GET':
-            res= await scraper_py(file)
-            return (res)
+
+# async def output(request):
+#         if request.method == 'POST' and request.FILES['myfile']:
+#             file=request.FILES['myfile']
+#
+#     #if request.method == 'GET':
+#             res= await scraper_py(file)
+#             return (res)
        # return(res)
 
 def download_zip(request):
